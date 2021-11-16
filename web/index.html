@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    const e = React.createElement;
+    class Welcome extends React.Component {
+        render() {
+            return <h1>Hello World</h1>;
+        }
+    }
+    ReactDOM.render(
+        e(Welcome),
+        document.getElementById('root')
+    );
+
+</script>
+</body>
+</html>
