@@ -1,0 +1,51 @@
+﻿#root {
+  display: flex;
+  justify-content: center;
+  //align-items: center;
+}
+
+hr {
+  color: burlywood;
+  background-color: burlywood;
+  //height: 1px;
+  width: 90vw;
+}
+
+.main {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0;
+  padding: 0;
+  width: 90vw;
+  height: 90vh;
+
+  &::-webkit-scrollbar {
+    background-color: white;
+    display: none;
+  }
+
+  & > .top {
+    //height: 300px;
+    width: 90vw;
+    //background-color: antiquewhite;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    & > .show {
+      width: 90%;
+      border-radius: 14px;
+      background-color: #bbcdc5;
+      padding: 10px;
+    }
+  }
+
+  & > .bottom {
+    height: auto;
+    width: 90vw;
+    background-color: burlywood;
+
+  }
+}

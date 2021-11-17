@@ -6,18 +6,80 @@
     <script src="react.development.js"></script>
     <script src="react-dom.development.js"></script>
     <script src="babel.min.js"></script>
+    <link rel="stylesheet" href="app.css">
 </head>
 <body>
 <div id="root"></div>
 <script type="text/babel">
+
     const e = React.createElement;
-    class Welcome extends React.Component {
+
+    class Item extends React.Component {
+        constructor(props) {
+            super(props);
+        }
+
         render() {
-            return <h1>Hello World</h1>;
+            return (
+                <div className="show">
+                    <h2>{this.props.src}</h2>
+                    <p>{this.props.dst}</p>
+                </div>
+            );
         }
     }
+
+    class Top extends React.Component {
+        constructor(props) {
+            super(props);
+            console.log(props);
+        }
+
+        render() {
+            const listItem = this.props.trans_result.map(k => {
+                <Item src={k.src} dst={k.dst}/>
+            })
+            return <div className="top">
+                {this.props.trans_result.map((t,k) => <Item src={t.src} dst={t.dst} key={k}/>)}
+            </div>
+        }
+    }
+
+    class Bottom extends React.Component {
+        render() {
+
+            return <div className="bottom">
+
+            </div>
+        }
+    }
+
+    // 分为上下两层
+    class Main extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {data: []};
+        }
+
+        componentDidMount() {
+            window.chrome.webview.addEventListener("message", (e) => {
+                const data = JSON.parse(e.data);
+                console.log(data);
+                this.setState({
+                    data: data.trans_result
+                })
+            })
+        }
+
+        render() {
+            return <div className="main">
+                <Top trans_result={this.state.data}/>
+            </div>;
+        }
+    }
+
     ReactDOM.render(
-        e(Welcome),
+        e(Main),
         document.getElementById('root')
     );
 

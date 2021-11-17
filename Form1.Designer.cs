@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
@@ -39,14 +40,16 @@
             this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
             this.webView21.Location = new System.Drawing.Point(0, -1);
             this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(450, 800);
+            this.webView21.Size = new System.Drawing.Size(450, 600);
             this.webView21.TabIndex = 0;
             this.webView21.ZoomFactor = 1D;
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(450, 800);
+            this.ClientSize = new System.Drawing.Size(450, 600);
             this.Controls.Add(this.webView21);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.ResumeLayout(false);

@@ -1,0 +1,40 @@
+#root {
+  display: flex;
+  justify-content: center;
+}
+hr {
+  color: burlywood;
+  background-color: burlywood;
+  width: 90vw;
+}
+.main {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0;
+  padding: 0;
+  width: 90vw;
+  height: 90vh;
+}
+.main::-webkit-scrollbar {
+  background-color: white;
+  display: none;
+}
+.main > .top {
+  width: 90vw;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.main > .top > .show {
+  width: 90%;
+  border-radius: 14px;
+  background-color: #bbcdc5;
+  padding: 10px;
+}
+.main > .bottom {
+  height: auto;
+  width: 90vw;
+  background-color: burlywood;
+}
+/*# sourceMappingURL=app.css.map */
